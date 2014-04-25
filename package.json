@@ -1,0 +1,13 @@
+{
+  "name": "cascade_ini",
+  "version": "0.0.0",
+  "description": "cascade-ini",
+  "main": "app.js",
+  "author": {
+    "name": "slarocque",
+    "email": ""
+  },
+  "dependencies": {
+    "ini": "~1.1.0"
+  }
+}
