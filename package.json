@@ -5,7 +5,10 @@
   "main": "app.js",
   "author": {
     "name": "slarocque",
-    "email": ""
+    "email": "stephl001@gmail.com"
+  },
+  "scripts": {
+    "test": "node ./runtests.js"
   },
   "dependencies": {
     "ini": "~1.1.0"
