@@ -2,7 +2,7 @@
   "name": "cascade_ini",
   "version": "0.0.0",
   "description": "cascade-ini",
-  "main": "app.js",
+  "main": "./lib/cascade-ini",
   "author": {
     "name": "slarocque",
     "email": "stephl001@gmail.com"
@@ -10,7 +10,12 @@
   "scripts": {
     "test": "node ./runtests.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stephl001/cascade-ini.git"
+  },
   "dependencies": {
-    "ini": "~1.1.0"
+    "ini": "~1.1.0",
+    "node.extend": "~1.0.10"
   }
 }
