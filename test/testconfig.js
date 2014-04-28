@@ -46,6 +46,14 @@ exports.testSimpleInheritanceInvalidLevel2 = function(test) {
     });
 };
 
+exports.testSimpleInheritanceFileNotFound = function(test) {
+    test.expect(1);
+    var config = ini.parseFile('./test/configs/child1/test2.ini', 3, function(err, config) {
+        test.equal(config.A.prop1, 'overriden2');
+        test.done();
+    });
+};
+
 exports.testSimpleInheritance2Levels = function(test) {
     test.expect(5);
     var config = ini.parseFile('./test/configs/child1/test.ini', 2, function(err, config) {
