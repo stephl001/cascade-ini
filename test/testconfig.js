@@ -1,6 +1,14 @@
 ﻿var ini = require('../lib/cascade-ini.js');
 var fs = require('fs');
 
+exports.testInvalidPath = function(test) {
+    test.expect(1);
+    var config = ini.parseFile('a/b/c/d.ini', function(err, config) {
+        test.strictEqual(config, undefined);
+        test.done();
+    });
+};
+
 exports.testNoInheritance = function(test) {
     test.expect(5);
     var config = ini.parseFile('./test/configs/test.ini', function(err, config) {
@@ -57,6 +65,18 @@ exports.testSimpleInheritanceFileNotFound = function(test) {
 exports.testSimpleInheritance2Levels = function(test) {
     test.expect(5);
     var config = ini.parseFile('./test/configs/child1/test.ini', 2, function(err, config) {
+        test.equal(config.A.prop1, 'overriden1');
+        test.equal(config.A.prop2, '134');
+        test.equal(config.B.prop2, 'value2');
+        test.equal(config.C.prop3, 'value3');
+        test.deepEqual(config.C.proparray, ['a','b','c']);
+        test.done();
+    });
+};
+
+exports.testSimpleInheritance2000Levels = function(test) {
+    test.expect(5);
+    var config = ini.parseFile('./test/configs/child1/test.ini', 2000, function(err, config) {
         test.equal(config.A.prop1, 'overriden1');
         test.equal(config.A.prop2, '134');
         test.equal(config.B.prop2, 'value2');
