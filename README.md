@@ -9,7 +9,13 @@ Builds a configuration object by merging all ini files with the same name on a g
 ``` js
 var ini = require('cascade-ini');
 
+//Reads a single ini file.
 ini.parseFile('path/to/ini/file', function(err, config) {
+  console.log(config);
+});
+
+//Merges all file.ini found in directories: path/to/ini/, path/to/ and path/
+ini.parseFile('path/to/ini/file.ini', 3, function(err, config) {
   console.log(config);
 });
 ```
