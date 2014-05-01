@@ -1,6 +1,6 @@
 {
   "name": "cascade-ini",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reads a ini file through a hierarchy of directory by appending properties from children to parent.",
   "main": "./lib/cascade-ini.js",
   "author": {
