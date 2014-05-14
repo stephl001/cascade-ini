@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "ini": "~1.1.0",
-    "node.extend": "~1.0.10"
+    "node.extend": "~1.0.10",
+    "strip-bom": "~0.2.0"
   },
   "devDependencies": {
     "nodeunit": "~0.8.7"
